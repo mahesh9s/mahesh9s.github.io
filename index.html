@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sai Vuppalapati — AI Projects</title>
+<meta name="description" content="AI-powered apps and experiments by Sai Vuppalapati.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --text: #1c1917;
+    --muted: #57534e;
+    --border: #e7e5e4;
+    --accent: #4f46e5;
+    --chip: #f5f5f4;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09;
+      --surface: #1c1917;
+      --text: #f5f5f4;
+      --muted: #a8a29e;
+      --border: #292524;
+      --accent: #818cf8;
+      --chip: #292524;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 88px 0 56px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+  h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.1; font-weight: 800; letter-spacing: -.03em; margin: 12px 0 16px; }
+  .bio { color: var(--muted); font-size: 18px; max-width: 620px; }
+  .links { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 15px;
+    text-decoration: none; border: 1px solid var(--border); background: var(--surface);
+  }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn:hover { opacity: .85; }
+
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .filter {
+    font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+    padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+    background: transparent; color: var(--muted);
+  }
+  .filter.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding-bottom: 80px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow);
+    transition: transform .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); }
+  .cover {
+    height: 140px; display: flex; align-items: center; justify-content: center;
+    font-size: 44px; font-weight: 800; color: #fff; letter-spacing: -.03em;
+  }
+  .body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .title-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  h2 { font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+  .platform { font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+  .desc { color: var(--muted); font-size: 15px; flex: 1; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+  .actions { display: flex; gap: 14px; margin-top: 4px; font-size: 14px; font-weight: 600; }
+  .actions a { color: var(--accent); text-decoration: none; }
+  .actions a:hover { text-decoration: underline; }
+  .private { color: var(--muted); font-weight: 500; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Hi, I'm Sai.<br>I build AI-powered apps.</h1>
+    <p class="bio">From semantic music search to food-safety alerts and mindful-minute apps, these are the products I've designed and shipped across web and iOS.</p>
+    <div class="links">
+      <a class="btn primary" href="https://github.com/mahesh9s">GitHub</a>
+      <a class="btn" href="#projects">See projects ↓</a>
+    </div>
+  </header>
+
+  <main class="wrap" id="projects">
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="web">Web</button>
+      <button class="filter" data-filter="ios">iOS</button>
+      <button class="filter" data-filter="ai">AI</button>
+    </div>
+
+    <div class="grid">
+      <article class="card" data-tags="web ai">
+        <div class="cover" style="background: linear-gradient(135deg,#6366f1,#ec4899)">♪</div>
+        <div class="body">
+          <div class="title-row"><h2>SaiMusicRecSys</h2><span class="platform">Web</span></div>
+          <p class="desc">AI-powered music recommendation system with semantic search.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase pgvector</span><span class="tag">Voyage AI</span><span class="tag">Apple Music API</span></div>
+          <div class="actions"><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="web ai">
+        <div class="cover" style="background: linear-gradient(135deg,#0ea5e9,#6366f1)">▶</div>
+        <div class="body">
+          <div class="title-row"><h2>OpenMovies</h2><span class="platform">Web</span></div>
+          <p class="desc">Where stories meet its audience.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Voyage AI</span></div>
+          <div class="actions"><a href="https://openmovies.vercel.app" target="_blank" rel="noopener">Live site ↗</a><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="web">
+        <div class="cover" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">LW</div>
+        <div class="body">
+          <div class="title-row"><h2>Little-Wise</h2><span class="platform">Mobile</span></div>
+          <p class="desc">Get US-wide recalls for baby food items.</p>
+          <div class="tags"><span class="tag">TypeScript</span><span class="tag">React Native</span></div>
+          <div class="actions"><a href="https://reclr.app/" target="_blank" rel="noopener">reclr.app ↗</a><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="web">
+        <div class="cover" style="background: linear-gradient(135deg,#10b981,#0ea5e9)">⚠</div>
+        <div class="body">
+          <div class="title-row"><h2>Recall</h2><span class="platform">Web</span></div>
+          <p class="desc">US food-recall lookup and alerts app.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">JavaScript</span></div>
+          <div class="actions"><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="ios ai">
+        <div class="cover" style="background: linear-gradient(135deg,#22c55e,#14b8a6)">💊</div>
+        <div class="body">
+          <div class="title-row"><h2>Supplimental</h2><span class="platform">iOS</span></div>
+          <p class="desc">AI-powered supplement timing iOS app.</p>
+          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span></div>
+          <div class="actions"><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="ios ai">
+        <div class="cover" style="background: linear-gradient(135deg,#1e293b,#6366f1)">HUSH</div>
+        <div class="body">
+          <div class="title-row"><h2>HUSH</h2><span class="platform">iOS</span></div>
+          <p class="desc">AI that helps you to find mindful minutes.</p>
+          <div class="tags"><span class="tag">Swift</span><span class="tag">Ambient audio</span></div>
+          <div class="actions"><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-tags="web ai">
+        <div class="cover" style="background: linear-gradient(135deg,#111827,#374151)">U1</div>
+        <div class="body">
+          <div class="title-row"><h2>Uber One AI Travel</h2><span class="platform">Web</span></div>
+          <p class="desc">Uber One AI Travel app.</p>
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Base44</span></div>
+          <div class="actions"><span class="private">🔒 Private source</span></div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    Source code for these projects is private. Happy to walk through any of them. Reach out on <a href="https://github.com/mahesh9s">GitHub</a>.
+  </footer>
+
+<script>
+  const buttons = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.card');
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.toggle('active', b === btn));
+    const f = btn.dataset.filter;
+    cards.forEach(c => {
+      c.style.display = f === 'all' || c.dataset.tags.split(' ').includes(f) ? '' : 'none';
+    });
+  }));
+</script>
+</body>
+</html>
