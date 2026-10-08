@@ -42,7 +42,7 @@
   a { color: inherit; }
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 
-  nav { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px 0; }
+  nav.wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 24px; padding-bottom: 0; }
   .brand { font-weight: 700; text-decoration: none; }
   .gh-link {
     display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
@@ -51,7 +51,7 @@
   }
   .gh-link:hover { opacity: .85; }
   .gh-link svg { width: 18px; height: 18px; fill: currentColor; }
-  header { padding: 48px 0 56px; }
+  header.wrap { padding-top: 48px; padding-bottom: 64px; }
   .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
   h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.1; font-weight: 800; letter-spacing: -.03em; margin: 12px 0 16px; }
   .bio { color: var(--muted); font-size: 18px; max-width: 620px; }
@@ -64,7 +64,12 @@
   .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
   .btn:hover { opacity: .85; }
 
-  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .section-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding-top: 32px; margin-bottom: 24px; border-top: 1px solid var(--border);
+  }
+  .section-title { font-size: 24px; font-weight: 700; letter-spacing: -.02em; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
   .filter {
     font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
     padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
@@ -117,11 +122,14 @@
   </header>
 
   <main class="wrap" id="projects">
-    <div class="filters" role="group" aria-label="Filter projects">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="web">Web</button>
-      <button class="filter" data-filter="ios">iOS</button>
-      <button class="filter" data-filter="ai">AI</button>
+    <div class="section-head">
+      <h2 class="section-title">Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="ios">iOS</button>
+        <button class="filter" data-filter="ai">AI</button>
+      </div>
     </div>
 
     <div class="grid">
@@ -136,7 +144,7 @@
       </article>
 
       <article class="card" data-tags="ai">
-        <div class="cover" style="background: linear-gradient(135deg,#0f766e,#2a78d6)">NDCG</div>
+        <div class="cover" style="background: linear-gradient(135deg,#0f766e,#2a78d6)">EVALS</div>
         <div class="body">
           <div class="title-row"><h2>Discovery Search Evals</h2><span class="platform">Open source</span></div>
           <p class="desc">Offline eval harness that decides whether a semantic search POC earns an A/B test: 60-query golden set, ship gates as code, bootstrap confidence intervals.</p>
